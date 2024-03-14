@@ -3,7 +3,7 @@ pipeline {
         stages {
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/bkrrajmali/newncplspringbootapp.git'
+                git branch: 'main', url: 'https://github.com/bkrrajmali/terraform-cicd-vm.git'
             }
         }
         // stage('Install Terraform') {
