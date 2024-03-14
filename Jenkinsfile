@@ -43,7 +43,7 @@ pipeline {
                 input message: 'Deploy to production?', ok: 'Deploy'
             }
         }
-        stage('Terraform Apply') {
+        stage('Terraform Destroy') {
             steps {
                 sh 'terraform destroy -auto-approve'
             }
