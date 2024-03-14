@@ -37,10 +37,10 @@ pipeline {
                 sh 'terraform apply -auto-approve'
             }
         }
-        stage('Approval') {
+        stage('Approval To Destroy') {
             steps {
                 // Pause pipeline and wait for user input
-                input message: 'Deploy to production?', ok: 'Deploy'
+                input message: 'Approve to Destroy', ok: 'Destroy'
             }
         }
         stage('Terraform Destroy') {
