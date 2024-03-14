@@ -1,9 +1,9 @@
 pipeline {
     agent any
-    stages {
-        stage('Checkout') {
+        stages {
+        stage('Checkout from Git') {
             steps {
-                git 'https://github.com/bkrrajmali/terraform-cicd-vm.git'
+                git branch: 'main', url: 'https://github.com/bkrrajmali/newncplspringbootapp.git'
             }
         }
         // stage('Install Terraform') {
