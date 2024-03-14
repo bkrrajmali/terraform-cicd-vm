@@ -6,7 +6,7 @@ pipeline {
                 git 'https://github.com/bkrrajmali/terraform-cicd-vm.git'
             }
         }
-         stage('Install Terraform') {
+        stage('Install Terraform') {
             steps {
                 script {
                     sh 'sudo yum install -y yum-utils'
@@ -15,7 +15,6 @@ pipeline {
                 }
             }
         }
-
         stage('Run Terraform') {
             steps {
                 script {
@@ -38,13 +37,13 @@ pipeline {
                 sh 'terraform apply -auto-approve'
             }
         }
-       stage('Approval') {
+        stage('Approval') {
             steps {
                 // Pause pipeline and wait for user input
                 input message: 'Deploy to production?', ok: 'Deploy'
             }
         }
-      stage('Terraform Apply') {
+        stage('Terraform Apply') {
             steps {
                 sh 'terraform destroy -auto-approve'
             }
