@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Approval To Destroy') {
             steps {
-                // Pause pipeline and wait for user input
+                // Pause pipeline and wait for user input1
                 input message: 'Approve to Destroy', ok: 'Destroy'
             }
         }
